@@ -38,10 +38,28 @@ export class TableComponent implements OnInit {
 
   displayedColumns: string[] = ['Nombre', 'Apellidos','Curso', 'Edad', 'Acciones'];
   dataSource = ELEMENT_DATA;
+  displayedColumnBackup: string[] = ['Nombre', 'Apellidos','Curso', 'Edad', 'Acciones'];
 
   constructor() { }
 
   ngOnInit(): void {
+
+  }
+  columnaInvisible(event: any, columnaInvisible:string){
+    if (event.checked == false) {
+
+      let index = this.displayedColumns.indexOf(columnaInvisible);
+      if (-1 !== index) {
+        this.displayedColumns.splice(index, 1)
+      }
+      
+    }else{
+      
+      let indexUwU = this.displayedColumnBackup.indexOf(columnaInvisible);
+
+      this.displayedColumns = [...this.displayedColumns.slice(0,indexUwU),this.displayedColumnBackup[indexUwU],...this.displayedColumns.slice(indexUwU)]
+    }
+
   }
 
 }
