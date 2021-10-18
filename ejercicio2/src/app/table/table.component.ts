@@ -40,12 +40,30 @@ export class TableComponent implements OnInit {
   dataSource = ELEMENT_DATA;
   displayedColumnBackup: string[] = ['Nombre', 'Apellidos','Curso', 'Edad', 'Acciones'];
 
+  name = '';
+
   constructor() { }
 
   ngOnInit(): void {
 
   }
-  columnaInvisible(event: any, columnaInvisible:string){
+
+  checkboxChange(isChecked: boolean, columnName: string) {
+    if (isChecked) {
+      this.displayedColumns.splice(this.displayedColumns.indexOf(columnName), 0, columnName);
+    }else{
+      let originalIndex = this.displayedColumns.indexOf(columnName);
+      //let indexToAdd = originalIndex > this.displayedColumns.length?
+      this.displayedColumns.splice(this.displayedColumns.indexOf(columnName), 1)
+    }
+    console.log(this.displayedColumns);
+  }
+enviar(){
+  console.log(this.name);
+}
+
+
+  /*columnaInvisible(event: any, columnaInvisible:string){
     if (event.checked == false) {
 
       let index = this.displayedColumns.indexOf(columnaInvisible);
@@ -60,6 +78,6 @@ export class TableComponent implements OnInit {
       this.displayedColumns = [...this.displayedColumns.slice(0,indexUwU),this.displayedColumnBackup[indexUwU],...this.displayedColumns.slice(indexUwU)]
     }
 
-  }
+  }*/
 
 }

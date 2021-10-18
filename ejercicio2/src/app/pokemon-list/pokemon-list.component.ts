@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+/*import { Component, OnInit } from '@angular/core';
 import { PokemonListResponse } from '../interfaces/pokemon-list.interface';
 import { PokemonService } from '../services/pokemon.service';
 
@@ -31,3 +31,4 @@ export class PokemonListComponent implements OnInit {
 }
 
 
+*/

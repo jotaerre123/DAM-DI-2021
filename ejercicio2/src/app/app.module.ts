@@ -10,7 +10,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import { BindingComponent } from './binding/binding.component';
 import {MatCheckboxModule} from '@angular/material/checkbox';
-import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
+/*import { PokemonListComponent } from './pokemon-list/pokemon-list.component';*/
 import { HttpClientModule } from '@angular/common/http';
 
 
@@ -21,8 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [
     AppComponent,
     TableComponent,
-    BindingComponent,
-    PokemonListComponent
+    BindingComponent
+    /*PokemonListComponent*/
   ],
   imports: [
     BrowserModule,
