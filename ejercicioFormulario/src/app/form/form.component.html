@@ -1,0 +1,19 @@
+
+
+<form>
+<mat-form-field appearance="fill">
+    <mat-label for="email">Email</mat-label>
+    <input matInput  id="email" [(ngModel)]="Registro.email" name="email"/>
+  </mat-form-field>
+ 
+  
+  <mat-form-field appearance="fill">
+    <mat-label>Contraseña</mat-label>
+    <input matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="Registro.contrasenia" name="contraseña">
+    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </button>
+  </mat-form-field>
+</form>
+
+<button mat-raised-button (click) = "enviar()" color="primary">Primary</button>
