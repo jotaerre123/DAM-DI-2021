@@ -10,11 +10,12 @@ import { PokemonService } from '../service/pokemon.service';
 export class PokemonComponent implements OnInit {
   pokemonList: Pokemon[] | undefined;
   pokemonNumberSelected = '50';
+  pokemonNombre: string = "";
 
   constructor(private pokemonService: PokemonService) {}
 
   ngOnInit(): void {
-    this.getPokemons(100);
+    this.getPokemons(50);
   }
 
   getPokemons(pokemonLimit: number) {
@@ -29,6 +30,11 @@ export class PokemonComponent implements OnInit {
       this.pokemonList = resultado.results;
       console.log(resultado);
     });
+  }
+  getPokemonName(){
+    this.pokemonService.getPokemon(this.pokemonNombre).subscribe(resultado => {
+      this.pokemonNombre = resultado.name;
+    })
   }
 
 }
