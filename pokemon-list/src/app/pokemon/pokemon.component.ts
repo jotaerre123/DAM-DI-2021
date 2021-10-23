@@ -37,4 +37,9 @@ export class PokemonComponent implements OnInit {
     })
   }
 
+  getPokemonPhotoUrl(url: string): string {
+    let splitArray = url.split("/");
+    return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${splitArray[6]}.png`
+  }
+
 }

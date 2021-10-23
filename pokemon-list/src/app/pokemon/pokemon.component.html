@@ -16,6 +16,15 @@
     </mat-select>
 </mat-form-field>
 
-<ul>
-    <li>{{pokemonNombre}}</li>
-</ul>
+<div>
+    <mat-card *ngFor="let pokemon of pokemonList; let i = index">
+        <mat-card-title-group>
+          <mat-card-title>{{pokemon.name}}</mat-card-title>
+          <mat-card-subtitle>Posición: {{i+1}}</mat-card-subtitle>
+          <img [src]="getPokemonPhotoUrl(pokemon.url)" width="80px" />
+        </mat-card-title-group>
+        <mat-card-content>
+          <p>Pocket Monsters</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
