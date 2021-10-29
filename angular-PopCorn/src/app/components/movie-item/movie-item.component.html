@@ -1,0 +1,8 @@
+
+<mat-card>
+    <mat-card-content>
+        <img [src]="getMovieImageUrl(movieInput)" height="200px" width="100%" />
+        <h3>{{movieInput.title}}</h3>
+        <button mat-raised-button color="primary" (click)="openMovieDetailDialog(movieInput.id)">Detalles</button>
+    </mat-card-content>
+</mat-card>

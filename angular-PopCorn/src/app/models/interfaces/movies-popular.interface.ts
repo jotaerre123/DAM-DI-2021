@@ -1,11 +1,12 @@
-export interface Welcome {
+
+export interface MoviesPopularResponse {
     page:          number;
-    results:       MoviesPopularResponse[];
+    results:       Movie[];
     total_pages:   number;
     total_results: number;
 }
 
-export interface MoviesPopularResponse {
+export interface Movie {
     adult:             boolean;
     backdrop_path:     string;
     genre_ids:         number[];
@@ -15,7 +16,7 @@ export interface MoviesPopularResponse {
     overview:          string;
     popularity:        number;
     poster_path:       string;
-    release_date:      Date;
+    release_date:      string;
     title:             string;
     video:             boolean;
     vote_average:      number;
